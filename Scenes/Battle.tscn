@@ -1,0 +1,124 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/Battle.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Backgrounds/Dungeon.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Enemies/Rat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Theme/Battle Theme.tres" type="Theme" id=4]
+[ext_resource path="res://Scripts/GUI.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/StatsPanel.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/SrtikeActionButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/SwooshActionButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/SpellActionButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=10]
+[ext_resource path="res://Sprites/bicolor_portraits.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/animations.tres" type="Animation" id=12]
+[ext_resource path="res://Scenes/TransitionColor.tscn" type="PackedScene" id=13]
+
+[node name="Battle" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Dungeon" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Enemy" type="Position2D" parent="."]
+position = Vector2( 45, 31 )
+
+[node name="Rat" parent="Enemy" instance=ExtResource( 3 )]
+
+[node name="GUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="StatsPanel" type="Panel" parent="GUI"]
+editor/display_folded = true
+margin_left = 3.0
+margin_top = 47.0
+margin_right = 87.0
+margin_bottom = 70.0
+script = ExtResource( 6 )
+
+[node name="StatsContainer" type="HBoxContainer" parent="GUI/StatsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HPLabel" type="Label" parent="GUI/StatsPanel/StatsContainer"]
+margin_top = 2.0
+margin_right = 25.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+text = "HP
+25"
+align = 1
+
+[node name="MPLabel" type="Label" parent="GUI/StatsPanel/StatsContainer"]
+margin_left = 29.0
+margin_top = 2.0
+margin_right = 54.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+text = "MP
+10"
+align = 1
+
+[node name="APLabel" type="Label" parent="GUI/StatsPanel/StatsContainer"]
+margin_left = 58.0
+margin_top = 2.0
+margin_right = 84.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+text = "AP
+3"
+align = 1
+
+[node name="ButtonsContainer" type="GridContainer" parent="GUI"]
+margin_left = 9.0
+margin_top = 73.0
+margin_right = 81.0
+margin_bottom = 134.0
+custom_constants/vseparation = 3
+custom_constants/hseparation = 8
+columns = 2
+
+[node name="SrtikeActionButton" parent="GUI/ButtonsContainer" instance=ExtResource( 7 )]
+
+[node name="SwooshActionButton" parent="GUI/ButtonsContainer" instance=ExtResource( 8 )]
+margin_left = 40.0
+margin_right = 74.0
+
+[node name="SpellActionButton" parent="GUI/ButtonsContainer" instance=ExtResource( 9 )]
+margin_top = 16.0
+margin_bottom = 29.0
+
+[node name="TextboxPanel" type="Panel" parent="GUI"]
+margin_top = 138.0
+margin_right = 90.0
+margin_bottom = 160.0
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2( 71, 118 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+editor/display_folded = true
+texture = ExtResource( 11 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="Darknes" type="Sprite" parent="Player/Sprite"]
+modulate = Color( 0, 0, 0, 0 )
+texture = ExtResource( 11 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/animations = ExtResource( 12 )
+
+[node name="TransitionColor" parent="." instance=ExtResource( 13 )]
+[connection signal="ap_changed" from="Player" to="GUI/StatsPanel" method="_on_Player_ap_changed"]
+[connection signal="hp_changed" from="Player" to="GUI/StatsPanel" method="_on_Player_hp_changed"]
+[connection signal="mp_changed" from="Player" to="GUI/StatsPanel" method="_on_Player_mp_changed"]

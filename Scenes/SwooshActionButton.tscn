@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/ActionButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/SwooshActionButton.gd" type="Script" id=2]
+
+[node name="SwooshActionButton" instance=ExtResource( 1 )]
+text = "Swoosh"
+script = ExtResource( 2 )

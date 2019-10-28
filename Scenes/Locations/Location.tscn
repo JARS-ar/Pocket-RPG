@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Theme/Map Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/Location.gd" type="Script" id=2]
+
+[node name="Location" type="Button"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+rect_pivot_offset = Vector2( 10, 10 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="LocationLabel" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = -12.0
+margin_top = -17.0
+margin_right = 13.0
+margin_bottom = 2.0
+text = "Generic
+Location"
+align = 1
+[connection signal="pressed" from="." to="." method="_on_Location_selected"]
