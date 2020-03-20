@@ -20,16 +20,16 @@ func _input(event):
 		return
 
 	if event is InputEventScreenDrag:
-		     
+			 
 		if event.speed == Vector2():
 			print("we're on a device and speed is broken")
-            # we're on a device and speed is broken
-            # see: https://github.com/godotengine/godot/issues/3623
+			# we're on a device and speed is broken
+			# see: https://github.com/godotengine/godot/issues/3623
 			event.speed = event.relative
 			
 		if event.speed.abs() >= drag_threshold:
 			
-            # scroll the map
+			# scroll the map
 			dragging = true
 			position -= event.relative
 			position.x = clamp(position.x, limit_left+45, limit_right-45)
@@ -38,7 +38,7 @@ func _input(event):
 
 	if event is InputEventScreenTouch:
 		if event.index == 0:
-            
+			
 			if dragging && event.pressed == false:
 #				prints("end drag")
 				dragging = false
