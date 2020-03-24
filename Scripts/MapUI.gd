@@ -82,3 +82,9 @@ func _on_ActionButton2_pressed():
 
 
 
+
+
+func _on_InventoryButton_pressed():
+
+	get_parent().pause_mode = !get_parent().pause_mode
+	$Menu/Inventory.visible = !$Menu/Inventory.visible
