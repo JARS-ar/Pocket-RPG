@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/World.gd" type="Script" id=1]
-[ext_resource path="res://WorldTerrainTiles.tres" type="TileSet" id=2]
-[ext_resource path="res://WorldBuildingTiles.tres" type="TileSet" id=3]
-[ext_resource path="res://16x16.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/WorldTerrainTiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Graphics/WorldBuildingTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Sprites/16x16.png" type="Texture" id=4]
 [ext_resource path="res://Theme/Map Theme.tres" type="Theme" id=5]
 [ext_resource path="res://Scenes/Navigator.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Locations/Cave.tscn" type="PackedScene" id=7]
@@ -69,7 +69,8 @@ anchor_bottom = 1.0
 theme = ExtResource( 5 )
 script = ExtResource( 6 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Cave" parent="Navigator" instance=ExtResource( 7 )]
@@ -181,7 +182,7 @@ disabled = true
 [node name="TransitionColor" parent="Transitions" instance=ExtResource( 13 )]
 
 [node name="MapCamera" type="Camera2D" parent="."]
-position = Vector2( 48, 48 )
+position = Vector2( 37.6724, 42.439 )
 offset = Vector2( 8, 38 )
 current = true
 limit_left = -46
