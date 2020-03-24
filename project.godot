@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Pocket RPG"
 run/main_scene="res://Scenes/World.tscn"
-config/icon="res://Sprites/Rat.png"
+config/icon="res://Graphics/Sprites/Rat.png"
 
 [display]
 

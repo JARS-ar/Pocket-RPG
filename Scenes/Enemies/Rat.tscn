@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Rat.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Sprites/Rat.png" type="Texture" id=2]
+
 
 [node name="Rat" instance=ExtResource( 1 )]
 

@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Theme/Map Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Graphics/Theme/Map Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/Location.gd" type="Script" id=2]
+
 
 [node name="Location" type="Button"]
 margin_right = 16.0

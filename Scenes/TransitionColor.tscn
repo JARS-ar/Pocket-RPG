@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Shaders/transition.material" type="Material" id=1]
-[ext_resource path="res://Shaders/TransitionColor.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/Shaders/transition.material" type="Material" id=1]
+[ext_resource path="res://Graphics/Shaders/TransitionColor.gd" type="Script" id=2]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "close"

@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scenes/World.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/WorldTerrainTiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Graphics/WorldBuildingTiles.tres" type="TileSet" id=3]
-[ext_resource path="res://Sprites/16x16.png" type="Texture" id=4]
-[ext_resource path="res://Theme/Map Theme.tres" type="Theme" id=5]
-[ext_resource path="res://Scenes/Navigator.gd" type="Script" id=6]
+[ext_resource path="res://Graphics/Sprites/16x16.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Theme/Map Theme.tres" type="Theme" id=5]
+[ext_resource path="res://Scripts/Navigator.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Locations/Cave.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Locations/Town.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Locations/House.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/PlayerToken.gd" type="Script" id=10]
-[ext_resource path="res://Sprites/bicolor_portraits.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/PlayerToken.gd" type="Script" id=10]
+[ext_resource path="res://Graphics/Sprites/bicolor_portraits.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/MapUI.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/TransitionColor.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scripts/MapCamera.gd" type="Script" id=14]
@@ -133,6 +133,9 @@ margin_top = 106.0
 margin_right = 89.0
 margin_bottom = 138.0
 theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichText" type="RichTextLabel" parent="UI/DescriptionPanel"]
 anchor_right = 1.0
@@ -141,6 +144,9 @@ margin_left = 2.0
 margin_top = 2.0
 margin_right = -2.0
 margin_bottom = -2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ActionsPanel" type="Panel" parent="UI"]
 margin_left = 1.0

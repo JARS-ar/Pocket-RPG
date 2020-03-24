@@ -1,18 +1,20 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Battle.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Backgrounds/Dungeon.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Sprites/Backgrounds/Dungeon.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Enemies/Rat.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Theme/Battle Theme.tres" type="Theme" id=4]
+[ext_resource path="res://Graphics/Theme/Battle Theme.tres" type="Theme" id=4]
 [ext_resource path="res://Scripts/GUI.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/StatsPanel.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/SrtikeActionButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/SwooshActionButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/SpellActionButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=10]
-[ext_resource path="res://Sprites/bicolor_portraits.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/animations.tres" type="Animation" id=12]
+[ext_resource path="res://Graphics/Sprites/bicolor_portraits.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/animations.tres" type="Animation" id=12]
 [ext_resource path="res://Scenes/TransitionColor.tscn" type="PackedScene" id=13]
+
+
 
 [node name="Battle" type="Node"]
 script = ExtResource( 1 )
