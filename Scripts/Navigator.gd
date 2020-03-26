@@ -15,6 +15,7 @@ func create_roads():
 	add_points()
 	connect_points()
 
+
 func add_points():
 	
 	var tiles = roads_map.get_used_cells()

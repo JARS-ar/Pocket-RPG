@@ -6,6 +6,7 @@ const ACTIONS_OFFSET = Vector2(0, 22)
 const DESCRIPTIONS_OFFSET = Vector2(0, 55)
 onready var player = get_parent().find_node('PlayerToken')
 
+signal pause_world
 
 
 func set_location(new_location):
@@ -85,6 +86,5 @@ func _on_ActionButton2_pressed():
 
 
 func _on_InventoryButton_pressed():
-
-	get_parent().pause_mode = !get_parent().pause_mode
+	emit_signal("pause_world")
 	$Menu/Inventory.visible = !$Menu/Inventory.visible
