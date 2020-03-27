@@ -81,10 +81,3 @@ func _on_ActionButton2_pressed():
 	var nav = get_parent().find_node('Navigator')
 	nav.travel_to(selected_location)
 
-
-
-
-
-func _on_InventoryButton_pressed():
-	emit_signal("pause_world")
-	$Menu/Inventory.visible = !$Menu/Inventory.visible

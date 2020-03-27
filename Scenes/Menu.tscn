@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Graphics/Theme/Map Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Graphics/Sprites/UI/IconMenu.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
+
+[node name="Menu" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.34902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="."]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 17.0
+margin_bottom = 15.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="Sprite" parent="MenuButton"]
+position = Vector2( 7, 6 )
+texture = ExtResource( 2 )
+
+[node name="Inventory" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 0, 86 )
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]

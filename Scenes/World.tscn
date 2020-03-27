@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/WorldTerrainTiles.tres" type="TileSet" id=2]
@@ -14,8 +14,7 @@
 [ext_resource path="res://Scripts/MapUI.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/TransitionColor.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scripts/MapCamera.gd" type="Script" id=14]
-[ext_resource path="res://Graphics/Sprites/UI/Icon-Menu.png" type="Texture" id=15]
-[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Menu.tscn" type="PackedScene" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "16x16.png 0"
@@ -139,26 +138,7 @@ offset = Vector2( 0, 55 )
 transform = Transform2D( 1, 0, 0, 1, 0, 55 )
 script = ExtResource( 12 )
 
-[node name="Menu" type="CanvasLayer" parent="UI"]
-layer = 2
-
-[node name="InventoryButton" type="Button" parent="UI/Menu"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 17.0
-margin_bottom = 15.0
-theme = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Icon" type="Sprite" parent="UI/Menu/InventoryButton"]
-position = Vector2( 7, 6 )
-texture = ExtResource( 15 )
-
-[node name="Inventory" parent="UI/Menu" instance=ExtResource( 16 )]
-visible = false
-position = Vector2( 0, 86 )
+[node name="Menu" parent="UI" instance=ExtResource( 15 )]
 
 [node name="DescriptionPanel" type="Panel" parent="UI"]
 margin_left = 1.0
@@ -241,7 +221,6 @@ script = ExtResource( 14 )
 playback_process_mode = 0
 [connection signal="arrived_at_destination" from="Navigator/PlayerToken" to="Navigator" method="_on_PlayerToken_arrived_at_destination"]
 [connection signal="pause_world" from="UI" to="." method="_on_UI_pause_world"]
-[connection signal="pressed" from="UI/Menu/InventoryButton" to="UI" method="_on_InventoryButton_pressed"]
 [connection signal="pressed" from="UI/ActionsPanel/ActionsContainer/ActionButton" to="UI" method="_on_ActionButton_pressed"]
 [connection signal="pressed" from="UI/ActionsPanel/ActionsContainer/ActionButton2" to="UI" method="_on_ActionButton2_pressed"]
 [connection signal="tween_all_completed" from="MapCamera/Tween" to="MapCamera" method="_on_Tween_tween_all_completed"]
