@@ -98,3 +98,14 @@ func _on_PlayerToken_arrived_at_destination():
 	map_camera.current = true
 	map_camera.smoothing_enabled = true
 	map_camera.touch_enabled = true
+
+
+
+
+
+
+
+
+
+
+
