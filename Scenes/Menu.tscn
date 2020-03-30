@@ -1,37 +1,102 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Graphics/Theme/Map Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Graphics/Sprites/UI/IconMenu.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Graphics/Sprites/loot03bag.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Sprites/bicolor_portraits.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Sprites/scroll.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Bio.tscn" type="PackedScene" id=8]
 
 [node name="Menu" type="CanvasLayer"]
 pause_mode = 2
 layer = 2
 script = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Display" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.34902 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="Display"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.854902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuBar" type="HBoxContainer" parent="Display"]
+anchor_right = 1.0
+margin_left = 18.0
+margin_top = 3.0
+margin_bottom = 13.0
+theme = ExtResource( 1 )
+custom_constants/separation = 5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BioButton" type="Button" parent="Display/MenuBar"]
+margin_left = 7.0
+margin_right = 23.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="Sprite" type="Sprite" parent="Display/MenuBar/BioButton"]
+position = Vector2( 8, 8 )
+scale = Vector2( 0.466667, 0.466667 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 1, 1, 30, 30 )
+
+[node name="InventoryButton" type="Button" parent="Display/MenuBar"]
+margin_left = 28.0
+margin_right = 44.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="Sprite" type="Sprite" parent="Display/MenuBar/InventoryButton"]
+position = Vector2( 8, 8 )
+scale = Vector2( 0.46875, 0.515625 )
+texture = ExtResource( 5 )
+
+[node name="LogButton" type="Button" parent="Display/MenuBar"]
+margin_left = 49.0
+margin_right = 65.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="Sprite" type="Sprite" parent="Display/MenuBar/LogButton"]
+position = Vector2( 8, 8 )
+scale = Vector2( 0.4375, 0.40625 )
+texture = ExtResource( 7 )
+
+[node name="Inventory" parent="Display" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Bio" parent="Display" instance=ExtResource( 8 )]
+visible = false
+
 [node name="MenuButton" type="Button" parent="."]
 margin_left = 3.0
 margin_top = 3.0
-margin_right = 17.0
-margin_bottom = 15.0
+margin_right = 15.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 12, 10 )
 theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Icon" type="Sprite" parent="MenuButton"]
-position = Vector2( 7, 6 )
+position = Vector2( 6, 5 )
+scale = Vector2( 0.8, 0.75 )
 texture = ExtResource( 2 )
-
-[node name="Inventory" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 86 )
+[connection signal="pressed" from="Display/MenuBar/BioButton" to="." method="_on_BioButton_pressed"]
+[connection signal="pressed" from="Display/MenuBar/InventoryButton" to="." method="_on_InventoryButton_pressed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
