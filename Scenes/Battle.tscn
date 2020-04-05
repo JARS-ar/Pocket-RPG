@@ -14,8 +14,6 @@
 [ext_resource path="res://Graphics/animations.tres" type="Animation" id=12]
 [ext_resource path="res://Scenes/TransitionColor.tscn" type="PackedScene" id=13]
 
-
-
 [node name="Battle" type="Node"]
 script = ExtResource( 1 )
 
@@ -35,7 +33,6 @@ theme = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="StatsPanel" type="Panel" parent="GUI"]
-editor/display_folded = true
 margin_left = 3.0
 margin_top = 47.0
 margin_right = 87.0
@@ -104,7 +101,6 @@ position = Vector2( 71, 118 )
 script = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
-editor/display_folded = true
 texture = ExtResource( 11 )
 flip_h = true
 region_enabled = true

@@ -4,8 +4,8 @@ const RED = Color(1, 0, 0, 1)
 const WHITE = Color(1, 1, 1, 1)
 
 
-var max_hp = 50
-var max_mp = 5
+var max_hp = 75
+var max_mp = 75
 var max_ap = 3
 var hp = max_hp setget set_hp
 var mp = max_mp setget set_mp

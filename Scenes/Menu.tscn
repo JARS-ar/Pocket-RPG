@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Graphics/Theme/Map Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Graphics/Sprites/UI/IconMenu.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Graphics/Sprites/bicolor_portraits.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/Sprites/scroll.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Bio.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphics/Theme/Battle Theme.tres" type="Theme" id=9]
 
 [node name="Menu" type="CanvasLayer"]
 pause_mode = 2
@@ -17,6 +18,7 @@ script = ExtResource( 4 )
 [node name="Display" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -80,7 +82,6 @@ texture = ExtResource( 7 )
 visible = false
 
 [node name="Bio" parent="Display" instance=ExtResource( 8 )]
-visible = false
 
 [node name="MenuButton" type="Button" parent="."]
 margin_left = 3.0
