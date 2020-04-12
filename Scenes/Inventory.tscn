@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/CaracterAnimation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ItemSlot.gd" type="Script" id=3]
 
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
@@ -26,6 +28,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterAnimation" parent="Panel/VBoxContainer" instance=ExtResource( 2 )]
+position = Vector2( 59.9161, 27.7389 )
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/CharacterAnimation"]
+margin_left = -46.1096
+margin_top = 15.2541
+margin_right = -13.1096
+margin_bottom = 48.2541
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

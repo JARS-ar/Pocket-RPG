@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Graphics/Sprites/SZIddle.png" type="Texture" id=1]
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "Iddle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 10, 1, 56, 128 ), Rect2( 76, 1, 57, 128 ), Rect2( 143, 1, 57, 128 ), Rect2( 210, 0, 58, 129 ), Rect2( 278, 1, 62, 128 ), Rect2( 350, 1, 65, 128 ), Rect2( 425, 0, 64, 129 ), Rect2( 499, 0, 60, 129 ), Rect2( 569, 0, 55, 129 ), Rect2( 634, 1, 56, 128 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( -1, 0 ), Vector2( -1, 0 ), Vector2( 1, -1 ), Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, -1 ), Vector2( 1, -1 ), Vector2( 1, -1 ), Vector2( 0, 0 ) ]
+}
+
+[node name="CharacterAnimation" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 10, 1, 56, 128 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Iddle"
+anims/Iddle = SubResource( 1 )

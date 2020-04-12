@@ -79,9 +79,9 @@ scale = Vector2( 0.4375, 0.40625 )
 texture = ExtResource( 7 )
 
 [node name="Inventory" parent="Display" instance=ExtResource( 3 )]
-visible = false
 
 [node name="Bio" parent="Display" instance=ExtResource( 8 )]
+visible = false
 
 [node name="MenuButton" type="Button" parent="."]
 margin_left = 3.0

@@ -63,6 +63,9 @@ tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393217, 0, 0, 393219, 0, 0, 393220, 0, 0, 458753, 0, 0, 458755, 0, 0, 458766, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 589837, 0, 0, 655373, 0, 0, 720909, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 851981, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Navigator" type="Control" parent="."]
 anchor_right = 1.0
@@ -71,6 +74,7 @@ theme = ExtResource( 5 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -216,6 +220,9 @@ drag_margin_bottom = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Tween" type="Tween" parent="MapCamera"]
 playback_process_mode = 0
