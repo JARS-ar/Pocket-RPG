@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Graphics/Theme/Map Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Graphics/Sprites/UI/IconMenu.png" type="Texture" id=2]
@@ -9,6 +9,39 @@
 [ext_resource path="res://Graphics/Sprites/scroll.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Bio.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Graphics/Theme/Battle Theme.tres" type="Theme" id=9]
+[ext_resource path="res://Scenes/CaracterAnimation.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Animation" id=2]
+resource_name = "BioToInv"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 25 ), Vector2( -90, 25 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "InvToBio"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -90, 25 ), Vector2( 0, 25 ) ]
+}
 
 [node name="Menu" type="CanvasLayer"]
 pause_mode = 2
@@ -78,10 +111,53 @@ position = Vector2( 8, 8 )
 scale = Vector2( 0.4375, 0.40625 )
 texture = ExtResource( 7 )
 
-[node name="Inventory" parent="Display" instance=ExtResource( 3 )]
+[node name="Slider" type="Panel" parent="Display"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 25.0
+margin_right = 180.0
+rect_min_size = Vector2( 270, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Bio" parent="Display" instance=ExtResource( 8 )]
-visible = false
+[node name="HBoxContainer" type="HBoxContainer" parent="Display/Slider"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bio" parent="Display/Slider/HBoxContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 90.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+
+[node name="Inventory" parent="Display/Slider/HBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 90.0
+margin_top = 0.0
+margin_right = 180.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+
+[node name="Log" type="Control" parent="Display/Slider/HBoxContainer"]
+margin_left = 180.0
+margin_right = 270.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Display/Slider"]
+anims/BioToInv = SubResource( 2 )
+anims/InvToBio = SubResource( 1 )
+
+[node name="CharacterAnimation" parent="Display" instance=ExtResource( 10 )]
+position = Vector2( 28, 31 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="MenuButton" type="Button" parent="."]
 margin_left = 3.0

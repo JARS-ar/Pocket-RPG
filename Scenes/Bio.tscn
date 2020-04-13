@@ -31,85 +31,74 @@ corner_radius_bottom_left = 4
 [node name="Bio" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
 theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -1.0
 margin_right = 90.0
-margin_bottom = 136.0
+margin_bottom = 128.0
 rect_scale = Vector2( 0.5, 0.5 )
-mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = 4.0
-margin_right = -4.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 180.0
+margin_bottom = 288.0
+alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
-margin_right = 175.0
-margin_bottom = 269.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-margin_right = 175.0
-margin_bottom = 64.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 176.0
+margin_right = 180.0
+margin_bottom = 240.0
 custom_constants/separation = 13
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 98.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 103.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 
-[node name="NameLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 98.0
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 103.0
 margin_bottom = 35.0
 text = "Raul
 Rodriguez"
 
-[node name="LevelBox" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="LevelBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 39.0
-margin_right = 98.0
+margin_right = 103.0
 margin_bottom = 59.0
 
-[node name="LevelLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/LevelBox"]
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/LevelBox"]
 margin_right = 54.0
 margin_bottom = 20.0
 text = "Nivel: "
 
-[node name="Level" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/LevelBox"]
+[node name="Level" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/LevelBox"]
 margin_left = 58.0
 margin_right = 72.0
 margin_bottom = 20.0
 text = "1"
 
-[node name="PortraitMargin" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 111.0
-margin_right = 175.0
+[node name="PortraitMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 116.0
+margin_right = 180.0
 margin_bottom = 64.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Portrait" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/PortraitMargin"]
+[node name="Portrait" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/PortraitMargin"]
 margin_right = 64.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 64 )
@@ -117,7 +106,7 @@ size_flags_vertical = 0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="Sprite" type="Sprite" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/PortraitMargin/Portrait"]
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/PortraitMargin/Portrait"]
 position = Vector2( 60.3575, 1.99999 )
 scale = Vector2( -1.819, 1.863 )
 texture = ExtResource( 2 )
@@ -125,22 +114,22 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
-[node name="HpBox" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-margin_top = 68.0
-margin_right = 175.0
-margin_bottom = 88.0
+[node name="HpBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 244.0
+margin_right = 180.0
+margin_bottom = 264.0
 custom_constants/separation = 0
 
-[node name="HpLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HpBox"]
+[node name="HpLabel" type="Label" parent="MarginContainer/VBoxContainer/HpBox"]
 margin_right = 32.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 32, 0 )
 text = "HP:"
 align = 2
 
-[node name="HpBar" type="ProgressBar" parent="Panel/MarginContainer/VBoxContainer/HpBox"]
+[node name="HpBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HpBox"]
 margin_left = 32.0
-margin_right = 175.0
+margin_right = 180.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -151,7 +140,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HpCounter" type="Label" parent="Panel/MarginContainer/VBoxContainer/HpBox/HpBar"]
+[node name="HpCounter" type="Label" parent="MarginContainer/VBoxContainer/HpBox/HpBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -0.315552
@@ -162,20 +151,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MpBox" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-margin_top = 92.0
-margin_right = 175.0
-margin_bottom = 112.0
+[node name="MpBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 268.0
+margin_right = 180.0
+margin_bottom = 288.0
 custom_constants/separation = 0
 
-[node name="MpLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/MpBox"]
+[node name="MpLabel" type="Label" parent="MarginContainer/VBoxContainer/MpBox"]
 margin_right = 32.0
 margin_bottom = 20.0
 text = "MP:"
 
-[node name="MpBar" type="ProgressBar" parent="Panel/MarginContainer/VBoxContainer/MpBox"]
+[node name="MpBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/MpBox"]
 margin_left = 32.0
-margin_right = 175.0
+margin_right = 180.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -186,7 +175,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MpCounter" type="Label" parent="Panel/MarginContainer/VBoxContainer/MpBox/MpBar"]
+[node name="MpCounter" type="Label" parent="MarginContainer/VBoxContainer/MpBox/MpBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "75/100"
