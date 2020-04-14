@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Sprites/skil.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ItemSlot.tscn" type="PackedScene" id=3]
 
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
@@ -26,7 +28,7 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 margin_top = 21.0
-margin_right = 181.0
+margin_right = 180.0
 margin_bottom = 101.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
@@ -38,3 +40,36 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="ItemSlot" parent="." instance=ExtResource( 3 )]
+margin_left = 5.22506
+margin_top = 6.76184
+margin_right = 39.2251
+margin_bottom = 40.7618
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+slotIndex = "head"
+
+[node name="ItemSlot2" parent="." instance=ExtResource( 3 )]
+margin_left = 6.45448
+margin_top = 47.6402
+margin_right = 40.4545
+margin_bottom = 81.6402
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="ItemSlot3" parent="." instance=ExtResource( 3 )]
+margin_left = 64.5448
+margin_top = 7.99126
+margin_right = 98.5448
+margin_bottom = 41.9913
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="ItemSlot4" parent="." instance=ExtResource( 3 )]
+margin_left = 64.8522
+margin_top = 50.4064
+margin_right = 98.8522
+margin_bottom = 84.4064
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )

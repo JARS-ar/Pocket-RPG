@@ -11,7 +11,7 @@
 [ext_resource path="res://Graphics/Theme/Battle Theme.tres" type="Theme" id=9]
 [ext_resource path="res://Scenes/CaracterAnimation.tscn" type="PackedScene" id=10]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "BioToInv"
 length = 0.9
 tracks/0/type = "value"
@@ -27,8 +27,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 25 ), Vector2( -90, 25 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "InvToBio"
+[sub_resource type="Animation" id=2]
 length = 0.9
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -152,12 +151,14 @@ margin_bottom = 135.0
 size_flags_horizontal = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Display/Slider"]
-anims/BioToInv = SubResource( 2 )
-anims/InvToBio = SubResource( 1 )
+anims/BioToInv = SubResource( 1 )
+anims/InvToBio = SubResource( 2 )
 
 [node name="CharacterAnimation" parent="Display" instance=ExtResource( 10 )]
 position = Vector2( 28, 31 )
 scale = Vector2( 0.5, 0.5 )
+z_index = 1
+z_as_relative = false
 
 [node name="MenuButton" type="Button" parent="."]
 margin_left = 3.0

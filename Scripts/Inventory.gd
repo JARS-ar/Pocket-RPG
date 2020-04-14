@@ -1,7 +1,7 @@
 
 extends GridContainer;
 const ItemClass = preload("Item.gd");
-const ItemSlotClass = preload("res://Scripts/ItemSlot.gd");
+const ItemSlotClass = preload("res://Scripts/InventorySlot.gd");
 
 const slotTexture = preload("res://Graphics/Sprites/skil.png");
 const itemImages = [
