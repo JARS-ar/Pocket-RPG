@@ -144,6 +144,8 @@ script = ExtResource( 12 )
 
 [node name="Menu" parent="UI" instance=ExtResource( 15 )]
 
+[node name="Tween" type="Tween" parent="UI"]
+
 [node name="DescriptionPanel" type="Panel" parent="UI"]
 margin_left = 1.0
 margin_top = 106.0
@@ -201,8 +203,6 @@ margin_bottom = 13.0
 rect_min_size = Vector2( 10, 0 )
 size_flags_horizontal = 3
 disabled = true
-
-[node name="Tween" type="Tween" parent="UI"]
 
 [node name="MapCamera" type="Camera2D" parent="."]
 position = Vector2( 37.6724, 42.439 )

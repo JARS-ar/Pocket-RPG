@@ -7,19 +7,21 @@
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 24.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HoverLayer" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.46303
-margin_top = -54.2465
-margin_right = 92.463
-margin_bottom = 46.7535
+margin_left = 1.44522
+margin_top = -59.0513
+margin_right = 90.4452
+margin_bottom = 41.9487
 rect_scale = Vector2( 0.5, 0.5 )
 alignment = 2
 __meta__ = {
@@ -28,7 +30,7 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
 margin_top = 21.0
-margin_right = 180.0
+margin_right = 178.0
 margin_bottom = 101.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3

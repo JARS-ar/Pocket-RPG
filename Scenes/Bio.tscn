@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Graphics/Sprites/skil.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Sprites/bicolor_portraits.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Sprites/character_portrait.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Theme/MenuTheme.tres" type="Theme" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -39,7 +39,7 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 90.0
+margin_right = 87.0
 margin_bottom = 128.0
 rect_scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -47,7 +47,7 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 180.0
+margin_right = 177.0
 margin_bottom = 288.0
 alignment = 2
 __meta__ = {
@@ -56,7 +56,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 176.0
-margin_right = 180.0
+margin_right = 177.0
 margin_bottom = 240.0
 custom_constants/separation = 13
 __meta__ = {
@@ -64,19 +64,19 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 103.0
+margin_right = 100.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 
 [node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-margin_right = 103.0
+margin_right = 100.0
 margin_bottom = 35.0
 text = "Raul
 Rodriguez"
 
 [node name="LevelBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 39.0
-margin_right = 103.0
+margin_right = 100.0
 margin_bottom = 59.0
 
 [node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/LevelBox"]
@@ -91,8 +91,8 @@ margin_bottom = 20.0
 text = "1"
 
 [node name="PortraitMargin" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 116.0
-margin_right = 180.0
+margin_left = 113.0
+margin_right = 177.0
 margin_bottom = 64.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -107,16 +107,15 @@ texture = ExtResource( 1 )
 expand = true
 
 [node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/HBoxContainer/PortraitMargin/Portrait"]
-position = Vector2( 60.3575, 1.99999 )
-scale = Vector2( -1.819, 1.863 )
+position = Vector2( 60.3082, 2.51099 )
+scale = Vector2( -0.269333, 0.29962 )
 texture = ExtResource( 2 )
 centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 32, 32 )
+region_rect = Rect2( 0, 0, 215, 196 )
 
 [node name="HpBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 244.0
-margin_right = 180.0
+margin_right = 177.0
 margin_bottom = 264.0
 custom_constants/separation = 0
 
@@ -129,7 +128,7 @@ align = 2
 
 [node name="HpBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HpBox"]
 margin_left = 32.0
-margin_right = 180.0
+margin_right = 177.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -153,7 +152,7 @@ __meta__ = {
 
 [node name="MpBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 268.0
-margin_right = 180.0
+margin_right = 177.0
 margin_bottom = 288.0
 custom_constants/separation = 0
 
@@ -164,7 +163,7 @@ text = "MP:"
 
 [node name="MpBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/MpBox"]
 margin_left = 32.0
-margin_right = 180.0
+margin_right = 177.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
