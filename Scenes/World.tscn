@@ -153,6 +153,7 @@ margin_right = 89.0
 margin_bottom = 138.0
 theme = ExtResource( 5 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -164,6 +165,7 @@ margin_top = 2.0
 margin_right = -2.0
 margin_bottom = -2.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -175,6 +177,7 @@ margin_bottom = 159.0
 theme = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true,
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

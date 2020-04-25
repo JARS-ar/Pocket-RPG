@@ -8,3 +8,6 @@ func _init(slotIndex):
 	mouse_filter = Control.MOUSE_FILTER_PASS;
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
 	pass
+
+func _ready():
+	connect("pressed", get_parent().get_parent().get_parent(), "on_pressed_ItemSlot")
