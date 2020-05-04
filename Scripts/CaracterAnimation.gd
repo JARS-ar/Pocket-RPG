@@ -9,4 +9,5 @@ func move_left():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	$Sprite/AnimationPlayer.play("Iddle")
+	if anim_name:
+		$Sprite/AnimationPlayer.play("Iddle")

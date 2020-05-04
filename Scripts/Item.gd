@@ -5,7 +5,7 @@ var itemName;
 var itemSlot;
 var picked = false;
 
-func _init(itemName, itemTexture, itemSlot, itemValue):
+func _init(itemName: String, itemTexture, itemSlot, itemValue):
 	name = itemName;
 	self.itemName = itemName;
 	texture = itemTexture;

@@ -25,6 +25,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 20 ), Vector2( -90, 20 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:margin_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:margin_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 270.0, 180.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.9
@@ -113,8 +137,9 @@ scale = Vector2( 0.4375, 0.40625 )
 texture = ExtResource( 7 )
 
 [node name="Slider" type="Panel" parent="Display/VBoxContainer"]
+margin_left = -90.0
 margin_top = 20.0
-margin_right = 270.0
+margin_right = 180.0
 margin_bottom = 157.0
 rect_min_size = Vector2( 270, 0 )
 size_flags_vertical = 3
@@ -176,6 +201,7 @@ __meta__ = {
 position = Vector2( 6, 5 )
 scale = Vector2( 0.8, 0.75 )
 texture = ExtResource( 2 )
+[connection signal="hide" from="Display" to="." method="_on_Display_hide"]
 [connection signal="pressed" from="Display/VBoxContainer/MenuBar/BioButton" to="." method="_on_BioButton_pressed"]
 [connection signal="pressed" from="Display/VBoxContainer/MenuBar/InventoryButton" to="." method="_on_InventoryButton_pressed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]

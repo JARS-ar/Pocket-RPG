@@ -4,10 +4,7 @@ extends CanvasLayer
 var selected_tab = null
 
 func _ready():
-	select_tab($Display/VBoxContainer/Slider/HBoxContainer/Bio)
 	$Display.hide()
-	
-
 
 func _on_MenuButton_pressed():
 	var tree = get_tree()
@@ -24,14 +21,15 @@ func select_tab(tab):
 		$Display/VBoxContainer/Slider/AnimationPlayer.play("BioToInv")
 		$Display/CharacterAnimation.move_right()
 	selected_tab = tab
-	
 
 
 func _on_BioButton_pressed():
 	select_tab($Display/VBoxContainer/Slider/HBoxContainer/Bio)
 
 
-
-
 func _on_InventoryButton_pressed():
 	select_tab($Display/VBoxContainer/Slider/HBoxContainer/Inventory)
+
+
+func _on_Display_hide():
+	select_tab($Display/VBoxContainer/Slider/HBoxContainer/Bio)

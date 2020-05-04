@@ -14,4 +14,5 @@ func open():
 	animation_player.play('open')
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	emit_signal("animation_finished")
+	if anim_name:
+		emit_signal("animation_finished")

@@ -6,7 +6,7 @@ const ACTIONS_OFFSET = Vector2(0, 22)
 const DESCRIPTIONS_OFFSET = Vector2(0, 55)
 onready var player = get_parent().find_node('PlayerToken')
 
-signal pause_world
+
 
 
 func set_location(new_location):

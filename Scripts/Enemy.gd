@@ -19,7 +19,9 @@ signal done
 
 func _ready():
 	var battle = get_tree().current_scene
-	connect("died", battle, '_on_Enemy_died')
+	var error = connect("died", battle, '_on_Enemy_died')
+	if error != OK:
+		print (error, " en ", self.name)
 	battle.enemy = self
 
 
