@@ -18,12 +18,12 @@ tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 20 ), Vector2( -90, 20 ) ]
+"values": [ Vector2( 0, 18 ), Vector2( -90, 18 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:margin_left")
@@ -62,7 +62,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -90, 20 ), Vector2( 0, 20 ) ]
+"values": [ Vector2( -90, 18 ), Vector2( 0, 18 ) ]
 }
 
 [node name="Menu" type="CanvasLayer"]
@@ -82,6 +82,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 3.0
+custom_constants/separation = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -137,12 +138,12 @@ scale = Vector2( 0.4375, 0.40625 )
 texture = ExtResource( 7 )
 
 [node name="Slider" type="Panel" parent="Display/VBoxContainer"]
-margin_left = -90.0
-margin_top = 20.0
-margin_right = 180.0
+margin_top = 18.0
+margin_right = 270.0
 margin_bottom = 157.0
 rect_min_size = Vector2( 270, 0 )
 size_flags_vertical = 3
+theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -159,7 +160,7 @@ __meta__ = {
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 90.0
-margin_bottom = 137.0
+margin_bottom = 139.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -168,13 +169,13 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 90.0
 margin_right = 180.0
-margin_bottom = 137.0
+margin_bottom = 139.0
 size_flags_horizontal = 3
 
 [node name="Log" type="Control" parent="Display/VBoxContainer/Slider/HBoxContainer"]
 margin_left = 180.0
 margin_right = 270.0
-margin_bottom = 137.0
+margin_bottom = 139.0
 size_flags_horizontal = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Display/VBoxContainer/Slider"]
@@ -182,7 +183,7 @@ anims/BioToInv = SubResource( 1 )
 anims/InvToBio = SubResource( 2 )
 
 [node name="CharacterAnimation" parent="Display" instance=ExtResource( 10 )]
-position = Vector2( 28, 31 )
+position = Vector2( 27, 29 )
 scale = Vector2( 0.5, 0.5 )
 z_as_relative = false
 

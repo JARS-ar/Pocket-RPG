@@ -19,24 +19,39 @@ layer = 5
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.44522
-margin_top = -59.0513
-margin_right = 90.4452
-margin_bottom = 41.9487
+margin_left = 1.79056
+margin_top = -61.4771
+margin_right = 83.7906
+margin_bottom = 67.5229
 rect_scale = Vector2( 0.5, 0.5 )
-alignment = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescriptionPannel" type="Panel" parent="VBoxContainer"]
+margin_right = 172.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 0, 45 )
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="VBoxContainer/DescriptionPannel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+bbcode_enabled = true
+bbcode_text = "[b]Espada loca:[/b] DMG"
+text = "Espada loca: DMG"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
-margin_top = 21.0
-margin_right = 178.0
-margin_bottom = 101.0
+margin_top = 49.0
+margin_right = 172.0
+margin_bottom = 129.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
-custom_constants/vseparation = 1
-custom_constants/hseparation = 1
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
 columns = 5
 script = ExtResource( 4 )
 __meta__ = {
