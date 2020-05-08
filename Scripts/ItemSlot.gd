@@ -15,7 +15,7 @@ func _ready():
 	pressed_timer.connect("timeout", self, 'on_pressed_timer_timeout')
 
 func on_pressed_timer_timeout():
-	print('long pressed')
+
 	emit_signal("long_pressed", self)
 
 func setItem(newItem):
@@ -40,6 +40,9 @@ func putItem(newItem):
 	add_child(item);
 	pass;
 
+func can_equip():
+	pass
+
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if event.pressed:
@@ -50,4 +53,3 @@ func _gui_input(event):
 			if !pressed_timer.is_stopped():
 				pressed_timer.stop()
 			emit_signal("pressed", self)
-			print(self.name)

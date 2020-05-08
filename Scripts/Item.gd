@@ -13,8 +13,7 @@ func _init(itemName: String, itemTexture, itemSlot, itemValue):
 	self.itemSlot = itemSlot;
 	mouse_filter = Control.MOUSE_FILTER_PASS;
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
-	pass
-	
+
 func pickItem():
 	mouse_filter = Control.MOUSE_FILTER_IGNORE;
 	picked = true;
