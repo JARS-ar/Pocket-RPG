@@ -1,4 +1,4 @@
-extends TextureRect
+class_name ItemSlot extends TextureRect
 
 export var slotIndex:String ;
 var item = null;
@@ -40,7 +40,8 @@ func putItem(newItem):
 	add_child(item);
 	pass;
 
-func can_equip():
+static func can_equip():
+	print('iemslot')
 	pass
 
 func _gui_input(event):
