@@ -40,16 +40,16 @@ func _input(event):
 		if event.index == 0:
 			
 			if dragging && event.pressed == false:
-#				prints("end drag")
+
 				dragging = false
 				pressed = false
 			else:
 				if event.pressed && pressed == false:
-					# prints("touch start")
+
 					pressed = true
-					# TODO: prevent select highlight
+
 				elif !event.pressed && pressed == true:
-					# prints("touch end and accept")
+
 					pressed = false
 					var ev = InputEventAction.new()
 					ev.action = "ui_accept"

@@ -41,7 +41,7 @@ func putItem(newItem):
 	pass;
 
 static func can_equip():
-	print('iemslot')
+
 	pass
 
 func _gui_input(event):

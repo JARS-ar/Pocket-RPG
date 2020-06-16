@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Scripts/Item.gd"
+}, {
 "base": "TextureRect",
 "class": "ItemSlot",
 "language": "GDScript",
 "path": "res://Scripts/ItemSlot.gd"
 } ]
 _global_script_class_icons={
+"Item": "",
 "ItemSlot": ""
 }
 

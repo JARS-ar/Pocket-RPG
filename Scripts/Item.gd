@@ -1,26 +1,19 @@
-extends TextureRect
+class_name Item extends Node
 
-var itemIcon;
-var itemName;
+var id: String
+var equiped: bool = false
+
 var itemSlot;
 var picked = false;
 
-func _init(itemName: String, itemTexture, itemSlot, itemValue):
-	name = itemName;
-	self.itemName = itemName;
-	texture = itemTexture;
-	hint_tooltip = "Name: %s\n\nValue: %d" % [itemName, itemValue];
-	self.itemSlot = itemSlot;
-	mouse_filter = Control.MOUSE_FILTER_PASS;
-	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
+func _init(itemName: String, itemTexture: Texture, itemSlot, itemValue: int, itemMods := []):
+	return null
 
-func pickItem():
-	mouse_filter = Control.MOUSE_FILTER_IGNORE;
-	picked = true;
+static func create_item():
 	pass
-	
-func putItem():
-	rect_position = Vector2(0, 0);
-	mouse_filter = Control.MOUSE_FILTER_PASS;
-	picked = false;
-	pass
+
+
+
+
+class Weapon extends Item:
+	var damage

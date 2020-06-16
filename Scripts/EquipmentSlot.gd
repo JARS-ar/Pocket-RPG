@@ -13,4 +13,4 @@ func _ready():
 
 static func can_equip():
 	ItemSlot.can_equip()
-	print('equipment slot')
+
